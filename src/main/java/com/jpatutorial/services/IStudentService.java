@@ -1,17 +1,19 @@
 package com.jpatutorial.services;
 
+import com.jpatutorial.dto.DtoStudent;
+import com.jpatutorial.dto.DtoStudentIU;
 import com.jpatutorial.entities.Student;
 
 import java.util.List;
 
 public interface IStudentService {
-    public Student saveStudent(Student student);
+    public DtoStudent saveStudent(DtoStudentIU student);
 
-    public List<Student> getAllStudents();
+    public List<DtoStudent> getAllStudents();
 
-    public Student getStudentById(Integer id);
+    public DtoStudent getStudentById(Integer id);
 
     public void deleteStudent(Integer id);
 
-    public Student updateStudent(Integer id, Student updateStudent);
+    public DtoStudent updateStudent(Integer id, DtoStudentIU updateStudent);
 }

@@ -1,6 +1,8 @@
 package com.jpatutorial.controller.impl;
 
 import com.jpatutorial.controller.IStudentController;
+import com.jpatutorial.dto.DtoStudent;
+import com.jpatutorial.dto.DtoStudentIU;
 import com.jpatutorial.entities.Student;
 import com.jpatutorial.services.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,19 +19,19 @@ public class StudentControllerImpl implements IStudentController {
 
     @PostMapping("/save")
     @Override
-    public Student saveStudent(@RequestBody Student student) {
+    public DtoStudent saveStudent(@RequestBody DtoStudentIU student) {
         return studentService.saveStudent(student);
     }
 
     @GetMapping("/list")
     @Override
-    public List<Student> getAllStudents() {
+    public List<DtoStudent> getAllStudents() {
         return studentService.getAllStudents();
     }
 
     @GetMapping("/{id}")
     @Override
-    public Student getStudentById(@PathVariable(name = "id") Integer id) {
+    public DtoStudent getStudentById(@PathVariable(name = "id") Integer id) {
         return studentService.getStudentById(id);
     }
 
@@ -41,7 +43,7 @@ public class StudentControllerImpl implements IStudentController {
 
     @PutMapping("update/{id}")
     @Override
-    public Student updateStudent(@PathVariable(name = "id") Integer id, @RequestBody Student updateStudent) {
+    public DtoStudent updateStudent(@PathVariable(name = "id") Integer id, @RequestBody DtoStudentIU updateStudent) {
         return studentService.updateStudent(id, updateStudent);
     }
 
